@@ -1,18 +1,21 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  //   if (typeof n1 !== "number" || typeof n2 !== "number") {
-  //     throw new Error("incorrect input");
-  //   }
-  const result = n1 + n2;
-  if (showResult === true) {
-    console.log(phrase + result);
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultConversion: string
+) {
+  let result;
+  if (typeof input1 === "number" && typeof input2 === "number") {
+    result = input1 + input2;
   } else {
-    return result;
+    result = input1.toString() + input2.toString();
   }
+  return result;
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = "result is: ";
+const combinedStringAges = combine(30, 26, "as-number");
 
-add(number1, number2, printResult, resultPhrase);
+console.log(combinedAges);
+
+const combinedNames = combine("max", "anna", "as-text");
+
+console.log(combinedNames);
